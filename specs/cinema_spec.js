@@ -34,9 +34,17 @@ describe('Cinema', function () {
      assert.deepStrictEqual(actual, expected);
   });
 
+  // it('should be able to find a film by title', function () {
+  //   const actual = [bladeRunner];
+  //   const expected = cinema.findByTitle('Blade Runner 2049');
+  //   assert.deepStrictEqual(actual, expected);
+  // });
+
+  // YOU CAN ALSO DO IT LIKE THIS;
+
   it('should be able to find a film by title', function () {
     const actual = [bladeRunner];
-    const expected = cinema.findByTitle('Blade Runner 2049');
+    const expected = cinema.findByProperty('title','Blade Runner 2049');
     assert.deepStrictEqual(actual, expected);
   });
 
