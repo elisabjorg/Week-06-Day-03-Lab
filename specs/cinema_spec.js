@@ -35,16 +35,36 @@ describe('Cinema', function () {
   });
 
   it('should be able to find a film by title', function () {
-    
+    const actual = [bladeRunner];
+    const expected = cinema.findByTitle('Blade Runner 2049');
+    assert.deepStrictEqual(actual, expected);
+  });
+
+  it('should be able to filter films by genre', function () {
+    const actual = [moonlight, trainspotting];
+    const expected = cinema.findByGenre('drama');
+    assert.deepStrictEqual(actual, expected);
+  });
+
+  it('should be able to check whether there are some films from a particular year', function () {
+    const actual = [bladeRunner, dunkirk, trainspotting];
+    const expected = cinema.findByYear(2017);
+    assert.deepStrictEqual(actual, expected);
+  });
+
+  it('should be able to check whether there are no films from a particular year', function () {
+    const actual = [];
+    const expected = cinema.findByYear(1992);
+    assert.deepStrictEqual(actual, expected);
   });
 
 
-
-
-  it('should be able to filter films by genre');
-  it('should be able to check whether there are some films from a particular year');
-  it('should be able to check whether there are no films from a particular year');
   it('should be able to check whether all films are over a particular length');
+
+
+
+
+  
   it('should be able to calculate total running time of all films');
 
 });
